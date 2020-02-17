@@ -4,9 +4,6 @@ def normal(x):
 def cuadrado (y):
     return y * y
 
-def cubo(x):
-    return x**3
-
 def sumaTodos(limitTo, f):
     # f va a contener la referencia a la funcion a realizar
     resultado = 0
