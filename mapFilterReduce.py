@@ -26,3 +26,14 @@ listaPares1 = filter(esPar, lista)
 #la X representa el valor que va a devolver el reduce
 # la Y representa los valores de la lista.
 sumatorio = reduce(lambda x, y : x+y, lista)
+
+suma100 = reduce(lambda x,y: x+y, range(101))
+
+sumatorioDobles = reduce (lambda x,y: x+y*2, lista)
+
+print(list(listaPares))
+print(list(listaPares1))
+print(sumatorio)
+print(sumatorioDobles)
+print(suma100)
+
