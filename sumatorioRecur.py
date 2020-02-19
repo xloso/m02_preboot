@@ -8,4 +8,7 @@ def sumatorio(n):
     
 sumatorio(4)
 
-def factorial(n)
+def factorial(n):
+    if n>0:
+        print("{},".format(n))
+
