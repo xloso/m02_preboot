@@ -1,9 +1,14 @@
 class Termometro():
     def __init__(self):
         self.__unidadM = 'C' #al ponerlo con __ decimos que es privado
+        # al ser privados tenemos que hacer setter y getter porque no vienen de fuera
         self.__temperatura = 0
     
-    def conversor(self, temperatura, unidad):
+    def __str__(self):
+        return "{}º {}".format(self.__temperatura, self.__unidadM)
+
+    def __conversor(self, temperatura, unidad):
+        # es privada porque nadie tiene porqué saber como se hace
         if unidad == 'C':
             return "{}º F".format(temperatura * 1.8 + 32)
             
@@ -11,10 +16,7 @@ class Termometro():
             return "{}º C".format((temperatura-32) / 1.8)
         else:
             return "unidad incorrecta"
-    
-    def __str__(self):
-        return "{}º {}".format(self.temperatura, self.unidadM)
-    
+
 #ahora hago un setter y un getter
     
     def unidadMedida(self, uniM=None):
@@ -31,7 +33,10 @@ class Termometro():
             self.__temperatura = temperatura
             
     def mide(self, uniM=None): #tenemos la unidad como opcional
-        if uniM == None or uniM == self.unidadM:
-            return selt.__srt__(self)
+        if uniM == None or uniM == self.__unidadM:
+            return self.__str__()
         else:
-            return self.conversor(self.temperatura, self.__unidadM)
+            if uniM == 'F' or uniM == 'C':
+                return self.__conversor(self.__temperatura, self.__unidadM)
+            else:
+                return self.__str__() #se puede omitir el (self) entre los paréntesis
